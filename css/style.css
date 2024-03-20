@@ -1,0 +1,186 @@
+#app,
+body,
+html {
+    height: 100%
+}
+
+.app,
+.toolbar {
+    position: absolute
+}
+
+
+.app,
+body {
+    overflow: hidden
+}
+
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: normal;
+    src: url(../fonts/roboto-v20-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-regular.woff2) format('woff2')
+}
+
+@font-face {
+    font-family: Roboto;
+    font-weight: 700;
+    font-style: normal;
+    src: url(../fonts/roboto-v20-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2) format('woff2')
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    font-weight: 700;
+    font-style: normal;
+    src: url(../fonts/roboto-mono-v7-vietnamese_latin-ext_latin_greek-ext_greek_cyrillic-ext_cyrillic-700.woff2) format('woff2')
+}
+
+
+@font-face {
+    font-family: weather-icons;
+    src: url(../fonts/weather-icons.woff) format("woff")
+}
+
+
+[class*=" weather-icon-"],
+[class^=weather-icon-] {
+    font-family: weather-icons !important;
+    font-size: var(--app-font-size);
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.weather-icon-overcast:before {
+    content: "\e900";
+}
+.weather-icon-light-rain:before {
+    content: "\e901";
+}
+.weather-icon-moderate-rain:before {
+    content: "\e902";
+}
+.weather-icon-sun:before {
+    content: "\e903";
+}
+.weather-icon-partially-cloudy:before {
+    content: "\e904";
+}
+.weather-icon-mostly-cloudy:before {
+    content: "\e905";
+  }
+.weather-icon-heavy-rain:before {
+    content: "\e909";
+}
+.weather-icon-minus:before {
+    content: "\ea0b";
+}
+.weather-icon-arrow-up:before {
+    content: "\ea32";
+}
+.weather-icon-arrow-down:before {
+    content: "\ea36";
+}
+
+
+
+
+html {
+    outline: 0
+}
+
+body {
+    -webkit-user-select: none;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-sans-serif, Roboto)
+}
+
+
+#app {
+    border-radius: var(--border-radius, none)
+}
+
+#app {
+    background-color: var(--theme-bg-color)
+}
+
+.app {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--app-font-size);
+    padding: calc(var(--app-font-size)/ 2)
+}
+body>#app>.app {
+    color: var(--theme-text-color)
+}
+.app>.wrap {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, min-content);
+    justify-content: space-between;
+    align-content: space-between;
+    column-gap: .4em;
+    row-gap: 2px
+}
+
+
+.app>.wrap>.cell {
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-end
+}
+.app>.wrap>.cell>.header,
+.app>.wrap>.cell>.value {
+    white-space: nowrap;
+    cursor: default;
+    transition: .1s color linear
+}
+
+.app>.wrap>.cell>.header {
+    font-size: .5em;
+    flex-grow: 1;
+    padding-bottom: 1px
+}
+.app>.wrap>.cell>.value {
+    font-family: var(--font-family-monospace, 'Roboto Mono');
+    font-weight: 700
+}
+
+.div-inline {
+    display: flex; 
+    align-items: center;
+}
+
+.div-inline>.mr {
+    margin-right: var(--theme-margin);
+}
+.div-inline>.ml {
+    margin-left: var(--theme-margin);
+}
+.div-inline>.m {
+    margin-left: var(--theme-margin);
+    margin-right: var(--theme-margin);
+}
+
+.icon {
+    font-size: var(--app-icon-font-size);
+}
+
+.prec-up {
+    color: var(--theme-prec-up);
+}
+
+.prec-down {
+    color: var(--theme-prec-down)
+}

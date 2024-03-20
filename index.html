@@ -1,0 +1,77 @@
+<!doctype html>
+<html
+    style="--font-family-sans-serif: Roboto;
+    --font-family-monospace: Roboto Mono;
+    --theme-bg-color: hsla(0, 0%, 6%, 0.7);
+    --theme-text-color: hsla(0, 0%, 100%);
+    --theme-prec-up: hsla(140, 80%, 50%);
+    --theme-prec-down: hsla(10, 80%, 60%);
+    --border-radius: 6px; 
+    --app-font-size: 17vmin;
+    --app-icon-font-size: 10vmin;
+    --theme-margin: 2vmin;"
+    >
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta name="author" content="Rovlgut" />
+    <title>Weather App</title>
+    <!-- angular -->
+    <script src="/libs/angular/angular.min.js"></script>
+    <!-- coffee -->
+    <script src="/libs/coffee-script.js"></script>
+    <script src="/libs/ir.coffee" type="text/coffeescript"></script>
+    <script src="app.coffee" type="text/coffeescript"></script>
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body >
+    <div app-is-maximized id="app">
+        <div ng-controller="WeatherCtrl" class="app">
+            <div class="wrap">
+                <div class="cell">
+                    <div class="header">Track Wetness</div>
+                    <div class="value">
+                        <div ng-bind="ir.CustomTrackWetnessStr"></div>
+                    </div>
+                </div>
+                
+                <div class="cell">
+                    <div class="header">Precipitation</div>
+                    <div class="value div-inline">
+                        <div ng-if="ir.Skies == 0 && ir.Precipitation<0.000001">
+                            <span class="weather-icon-sun"></span>
+                        </div>
+                        <div ng-if="ir.Skies == 1 && ir.Precipitation<0.000001">
+                            <span class="weather-icon-partially-cloudy"></span>
+                        </div>
+                        <div ng-if="ir.Skies == 2 && ir.Precipitation<0.000001">
+                            <span class="weather-icon-mostly-cloudy"></span>
+                        </div>
+                        <div ng-if="ir.Skies == 3 && ir.Precipitation<0.001">
+                            <span class="weather-icon-overcast"></span>
+                        </div>
+                        <div ng-if="ir.Precipitation>0.001 && ir.Precipitation<0.1">
+                            <span class="weather-icon-light-rain"></span>
+                        </div>
+                        <div ng-if="ir.Precipitation>0.1 && ir.Precipitation<0.5">
+                            <span class="weather-icon-moderate-rain"></span>
+                        </div>
+                        <div ng-if="ir.Precipitation>0.5">
+                            <span class="weather-icon-heavy-rain"></span>
+                        </div>
+                        <div ng-bind="ir.CustomPrecipitationStr" class="ml"></div>
+                        <div ng-if="ir.CustomPrecipitationState == 1">
+                            <span class="weather-icon-arrow-up icon prec-up"></span>
+                        </div>
+                        <div ng-if="ir.CustomPrecipitationState == 2">
+                            <span class="weather-icon-arrow-down icon prec-down"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+
+</body>
+</html>
