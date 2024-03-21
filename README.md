@@ -52,4 +52,6 @@ Precipitation is how much its rains. On start-finish line. My guess its mirrors 
 Now you can open overlay in edit new box.
 
 --------
+P.S Первый раз работал с таким стеком. Не знаком с CoffeeScript и Angular. Но смог из примеров слепить, разобраться и вывести те данные что хотел. Надеюсь ломаться не будет :-)
+
 Author: Rovlgut
