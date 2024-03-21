@@ -20,7 +20,7 @@ jobs:
         id: archive
         with:
           format: "zip"
-          name: "WeatherApp"
+          name: "WeatherApp/WeatherApp"
           include: "**"
 
       - name: Create Release
