@@ -21,7 +21,7 @@ jobs:
         with:
           format: "zip"
           name: "WeatherApp"
-          include: "**/WeatherApp/**"
+          include: "**/!(img)*/**"
 
       - name: Create Release
         id: create_release
