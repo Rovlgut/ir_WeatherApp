@@ -19,6 +19,7 @@ jobs:
         uses: ksm2/archive-action@v1
         id: archive
         with:
+          root-directory: WeatherApp
           format: "zip"
           name: "WeatherApp"
           include: "**"
