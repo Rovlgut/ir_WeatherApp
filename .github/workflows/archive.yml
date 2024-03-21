@@ -1,4 +1,4 @@
-name: Create Arcive Workflow
+name: Create Archive Workflow
 
 on:
   push:
@@ -15,13 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         
-      - name: Create Achive
+      - name: Create Achieve
         uses: ksm2/archive-action@v1
         id: archive
         with:
           format: "zip"
-          name: "WeatherApp/WeatherApp"
-          include: "**"
+          name: "WeatherApp"
+          include: "{/!(img)*/**,/*}"
 
       - name: Create Release
         id: create_release
